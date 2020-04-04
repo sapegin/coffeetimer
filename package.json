@@ -1,0 +1,56 @@
+{
+  "name": "coffeetimer",
+  "private": true,
+  "author": {
+    "name": "Artem Sapegin",
+    "url": "https://sapegin.me"
+  },
+  "homepage": "https://github.com/sapegin/coffeetimer",
+  "repository": "sapegin/coffeetimer",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --cache --fix --ext .ts,.tsx",
+    "pretest": "npm run lint && tsc --noEmit",
+    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,md}\"",
+    "posttest": "npm run format",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@xstate/react": "^0.8.1",
+    "next": "^9.3.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.0.1",
+    "tamia": "^5.5.1",
+    "xstate": "^4.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.11.0",
+    "@types/react": "^16.9.32",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-tamia": "^7.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.1",
+    "prettier": "^1.19.1",
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --cache --fix",
+    "*.{ts,tsx,md}": "prettier --write"
+  }
+}
