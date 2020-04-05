@@ -13,8 +13,8 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build",
     "start": "next start",
+    "build": "next build && next export",
     "lint": "eslint . --cache --fix --ext .ts,.tsx",
     "pretest": "npm run lint && tsc --noEmit",
     "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,md}\"",
