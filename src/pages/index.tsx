@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 import { NextPage } from 'next';
 import { useMachine } from '@xstate/react';
+import { Box, Flex, Text } from 'tamia';
 import { App } from '../components/App';
+import { TheButton } from '../components/TheButton';
+import { WaterSlider } from '../components/WaterSlider';
+import { Ingredients } from '../components/Ingredients';
+import { Steps, Step } from '../components/Steps';
 import { timerMachine } from '../machines/timerMachine';
 import { preset } from '../presets/default';
 
@@ -9,12 +14,12 @@ const IndexPage: NextPage = () => {
 	const { waterFrom, waterTo, waterDefault, brew } = preset;
 	const [
 		{
-			context: { waterAmout, elapsed },
-			value,
+			context: { waterAmount, elapsed },
+			value: status,
 		},
 		send,
 	] = useMachine(timerMachine);
-	const { timer, steps } = brew({ waterAmout });
+	const { timer, coffeeAmount, steps } = brew({ waterAmout: waterAmount });
 
 	useEffect(() => {
 		send('UPDATE_WATER_AMOUNT', { value: waterDefault });
@@ -26,36 +31,43 @@ const IndexPage: NextPage = () => {
 
 	return (
 		<App>
-			<div>
-				<label>
-					<span>Water amount:</span>
-					<input
-						type="range"
+			<Flex flexDirection="column" gap="l" mt="m">
+				<Box>
+					<WaterSlider
 						min={waterFrom}
 						max={waterTo}
-						value={waterAmout}
-						step={50}
-						disabled={value === 'running'}
-						onChange={event => {
+						value={waterAmount}
+						step={10}
+						disabled={status === 'running'}
+						onChange={value => {
 							send('UPDATE_WATER_AMOUNT', {
-								value: Number(event.target.value),
+								value,
 							});
 						}}
 					/>
-					({waterAmout} ml)
-				</label>
-			</div>
-			<button onClick={() => send('TOGGLE')}>
-				{value === 'paused' ? 'Start' : 'Stop'}
-			</button>
-			<div>
-				<progress max={timer} value={elapsed} />
-			</div>
-			<ol>
-				{steps.map((step, index) => (
-					<li key={index}>{step}</li>
-				))}
-			</ol>
+				</Box>
+				<Box>
+					<Flex justifyContent="center">
+						<TheButton
+							status={status === 'running' ? 'running' : 'paused'}
+							duration={timer}
+							elapsed={elapsed}
+							onStart={() => send('TOGGLE')}
+							onReset={() => send('TOGGLE')}
+						/>
+					</Flex>
+				</Box>
+				<Box>
+					<Ingredients waterAmount={waterAmount} coffeeAmount={coffeeAmount} />
+				</Box>
+				<Box>
+					<Flex as={Steps} flexDirection="column" gap="s">
+						{steps.map((step, index) => (
+							<Step key={index}>{step}</Step>
+						))}
+					</Flex>
+				</Box>
+			</Flex>
 		</App>
 	);
 };

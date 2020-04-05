@@ -4,7 +4,7 @@ const INTERVAL = 1;
 const MS_IN_SECS = 1000;
 
 interface TimerContext {
-	waterAmout: number;
+	waterAmount: number;
 	elapsed: number;
 	duration: number;
 }
@@ -28,7 +28,7 @@ type TimerEvent =
 export const timerMachine = createMachine<TimerContext, TimerEvent>({
 	initial: 'paused',
 	context: {
-		waterAmout: 0,
+		waterAmount: 0,
 		elapsed: 0,
 		duration: 0,
 	},
@@ -71,7 +71,7 @@ export const timerMachine = createMachine<TimerContext, TimerEvent>({
 				},
 				UPDATE_WATER_AMOUNT: {
 					actions: assign({
-						waterAmout: (_, event) => event.value,
+						waterAmount: (_, event) => event.value,
 					}),
 				},
 				TOGGLE: {

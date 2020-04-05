@@ -1,6 +1,8 @@
 const baseFont = [
-	// Safari for OS X and iOS (San Francisco)
+	// Safari for macOS and iOS (San Francisco)
 	'-apple-system',
+	// Chrome on macOS (San Francisco)
+	'BlinkMacSystemFont',
 	// Windows
 	'"Segoe UI"',
 	// Android
@@ -13,12 +15,6 @@ const baseFont = [
 	'"Apple Color Emoji"',
 	'"Segoe UI Emoji"',
 	'"Segoe UI Symbol"',
-].join(', ');
-const monospaceFont = [
-	'Monaco',
-	'"DejaVu Sans Mono"',
-	'"Lucida Console"',
-	'monospace',
 ].join(', ');
 const space = {
 	xxs: '0.125rem', // 2px
@@ -39,8 +35,6 @@ const breakpoints = [
 const fonts = {
 	base: baseFont,
 	heading: baseFont,
-	pre: monospaceFont,
-	code: monospaceFont,
 };
 const fontSizes = {
 	base: '1rem',
@@ -55,12 +49,14 @@ const fontSizes = {
 };
 const colors = {
 	bg: '#fff',
-	base: '#222',
-	border: '#ddd',
-	primary: '#c25400',
-	hover: '#f56a00',
+	base: '#333',
+	light: '#767676',
+	border: '#ccc',
+	primary: '#b279c5',
+	focus: 'hsla(285, 40%, 62%, 0.5)',
+	hover: '#994db3',
 	selection: 'rgb(255,237,117)',
-	selectionAlpha: 'rgba(255,237,117,0.25)', // TODO
+	selectionAlpha: 'rgba(255,237,117,0.25)',
 };
 const fontWeights = {
 	base: 400,
@@ -75,6 +71,9 @@ const lineHeights = {
 const letterSpacings = {
 	base: 0,
 	heading: 0,
+};
+const boxShadows = {
+	focus: `0 0 0 3px ${colors.focus}`,
 };
 const headingBaseStyles = {
 	color: 'base',
@@ -99,11 +98,11 @@ export default {
 	listMargin: '1.3em',
 	page: {
 		// Max page with
-		maxWidth: '75rem',
+		maxWidth: '32rem',
 
 		// Body paddings
 		xPadding: space.m,
-		yPadding: 0,
+		yPadding: space.m,
 
 		// Max content width (<Container>)
 		contentMaxWidth: null,
@@ -118,6 +117,7 @@ export default {
 	lineHeights,
 	letterSpacings,
 	colors,
+	boxShadows,
 	breakpoints,
 	headingStyles: {
 		1: {
@@ -150,6 +150,15 @@ export default {
 	textStyles: {
 		base: {
 			...textBaseStyles,
+		},
+		timer: {
+			...textBaseStyles,
+			fontSize: 'l',
+		},
+		light: {
+			...textBaseStyles,
+			fontSize: fontSizes.s,
+			color: colors.light,
 		},
 	},
 } as const;
