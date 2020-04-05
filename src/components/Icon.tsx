@@ -68,7 +68,7 @@ export type IconName = keyof typeof ICONS;
 
 type Props = {
 	icon: IconName;
-	size: number;
+	size?: number;
 };
 
 export function Icon({ icon, size = SIZE }: Props) {
