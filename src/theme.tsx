@@ -102,7 +102,7 @@ export default {
 
 		// Body paddings
 		xPadding: space.m,
-		yPadding: space.m,
+		yPadding: 0,
 
 		// Max content width (<Container>)
 		contentMaxWidth: null,
@@ -119,34 +119,7 @@ export default {
 	colors,
 	boxShadows,
 	breakpoints,
-	headingStyles: {
-		1: {
-			...headingBaseStyles,
-			fontSize: 'xxl',
-		},
-		2: {
-			...headingBaseStyles,
-			fontSize: 'xl',
-		},
-		3: {
-			...headingBaseStyles,
-			fontSize: 'l',
-		},
-		4: {
-			...headingBaseStyles,
-			fontSize: 'm',
-			fontWeight: 'bold',
-		},
-		5: {
-			...headingBaseStyles,
-			fontSize: 'm',
-			fontStyle: 'italic',
-		},
-		6: {
-			...headingBaseStyles,
-			fontSize: 'm',
-		},
-	},
+	headingStyles: {},
 	textStyles: {
 		base: {
 			...textBaseStyles,
