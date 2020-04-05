@@ -1,9 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
+import { createGlobalStyle } from 'styled-components';
 import { Provider } from './Provider';
+
+// Avoid scroll on mobile
+const GlobalStyles = createGlobalStyle`
+	body {
+		min-height: 0;
+		overflow: hidden;
+	}
+`;
 
 export const App: React.FC = ({ children }) => (
 	<Provider>
+		<GlobalStyles />
 		<Head>
 			<title>Coffee timer</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
