@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { NextPage } from 'next';
 import { useMachine } from '@xstate/react';
-import { Box, Flex, Text } from 'tamia';
+import { Box, Flex, VisuallyHidden } from 'tamia';
 import { App } from '../components/App';
 import { TheButton } from '../components/TheButton';
 import { WaterSlider } from '../components/WaterSlider';
@@ -31,6 +31,7 @@ const IndexPage: NextPage = () => {
 
 	return (
 		<App>
+			<VisuallyHidden as="h1">Coffee timer</VisuallyHidden>
 			<Flex flexDirection="column" gap="l" mt="m">
 				<Box>
 					<WaterSlider

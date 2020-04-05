@@ -5,6 +5,7 @@ import { Provider } from './Provider';
 export const App: React.FC = ({ children }) => (
 	<Provider>
 		<Head>
+			<title>Coffee timer</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<meta charSet="utf-8" />
 			<link
