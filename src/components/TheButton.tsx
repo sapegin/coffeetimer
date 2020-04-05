@@ -5,8 +5,8 @@ import { CircularProgress } from './CircularProgress';
 import { Time } from './Time';
 import { Icon } from './Icon';
 
-const BUTTON_SIZE = '5rem';
-const BUTTON_HALF_SIZE = '2.5rem';
+const BUTTON_SIZE = '8rem';
+const BUTTON_HALF_SIZE = '3rem';
 
 type Status = 'paused' | 'running';
 
@@ -98,14 +98,14 @@ export const TheButton = ({
 			opacity={status === 'running' ? 0 : 1}
 		>
 			<Box position="relative" left="0.2rem">
-				<Icon icon="play" size={44} />
+				<Icon icon="play" size={64} />
 			</Box>
 		</StartButton>
 		<Flex
 			position="absolute"
 			top={0}
 			bottom={0}
-			right="-3rem"
+			right="-4rem"
 			alignItems="center"
 		>
 			<ResetButton
@@ -116,7 +116,7 @@ export const TheButton = ({
 				disabled={status !== 'running'}
 				opacity={status === 'running' ? 1 : 0}
 			>
-				<Icon icon="reset" size={24} />
+				<Icon icon="reset" size={28} />
 			</ResetButton>
 		</Flex>
 	</Box>

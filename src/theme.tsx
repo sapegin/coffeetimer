@@ -75,13 +75,6 @@ const letterSpacings = {
 const boxShadows = {
 	focus: `0 0 0 3px ${colors.focus}`,
 };
-const headingBaseStyles = {
-	color: 'base',
-	fontFamily: 'heading',
-	fontWeight: 'heading',
-	lineHeight: 'heading',
-	letterSpacing: 'heading',
-};
 const textBaseStyles = {
 	color: 'base',
 	fontFamily: 'base',
@@ -126,7 +119,7 @@ export default {
 		},
 		timer: {
 			...textBaseStyles,
-			fontSize: 'l',
+			fontSize: fontSizes.xl,
 		},
 		light: {
 			...textBaseStyles,
