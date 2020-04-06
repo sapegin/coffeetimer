@@ -25,6 +25,11 @@ export const App: React.FC = ({ children }) => (
 			<link rel="apple-touch-icon" href="/icon.png" />
 			<meta name="apple-mobile-web-app-capable" content="yes" />
 			<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+			<meta name="theme-color" content="#b279c5" />
+			<meta name="description" content="Basic coffee timer" />
+			<meta property="og:type" content="website" />
+			<meta property="og:title" content="Coffee timer" />
+			<meta name="twitter:creator" content="@iamsapegin" />
 		</Head>
 		{children}
 	</Provider>
