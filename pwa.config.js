@@ -1,6 +1,8 @@
-exports.babel = function(config) {
-	config.plugins.push([
-		'styled-components',
-		{ ssr: true, displayName: true, preprocess: false },
-	]);
-};
+exports.babel = function (config) {
+	config.plugins.push(
+		['babel-plugin-styled-components', {
+			transpileTemplateLiterals: true,
+			pure: true,
+		}]
+	);
+}
