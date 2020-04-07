@@ -7,13 +7,14 @@ if (process.env.NODE_ENV === 'production') {
 	const sheet = new ServerStyleSheet();
 
 	ReactDOM.hydrate(
-		[
-			<StyleSheetManager sheet={ sheet.instance }>
-				<IndexPage/>
-			</StyleSheetManager>,
-			React.createElement(() => sheet.getStyleElement())
-		],
+		<StyleSheetManager sheet={ sheet.instance }>
+			<IndexPage/>
+		</StyleSheetManager>,
 		document.getElementById('app'),
+		() => {
+			document.head.innerHTML += sheet.getStyleTags();
+			sheet.seal();
+		}
 	);
 
 	// Service Worker registration
