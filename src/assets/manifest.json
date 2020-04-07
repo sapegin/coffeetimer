@@ -1,0 +1,14 @@
+{
+  "name": "Coffee Timer",
+  "short_name": "Coffee Timer",
+  "background_color": "#fff",
+  "orientation": "portrait",
+  "theme_color": "#b279c5",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [{
+    "src": "/assets/icon.png",
+    "type": "image/png",
+    "sizes": "160x160"
+  }]
+}

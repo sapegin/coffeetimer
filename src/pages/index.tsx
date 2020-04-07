@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { NextPage } from 'next';
 import { useMachine } from '@xstate/react';
 import { Box, Flex, VisuallyHidden } from 'tamia';
 import { App } from '../components/App';
@@ -10,7 +9,7 @@ import { Steps, Step } from '../components/Steps';
 import { timerMachine } from '../machines/timerMachine';
 import { preset } from '../presets/default';
 
-const IndexPage: NextPage = () => {
+export const IndexPage = () => {
 	const { waterFrom, waterTo, waterDefault, brew } = preset;
 	const [
 		{
@@ -72,5 +71,3 @@ const IndexPage: NextPage = () => {
 		</App>
 	);
 };
-
-export default IndexPage;

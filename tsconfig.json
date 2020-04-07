@@ -1,20 +1,24 @@
 {
 	"compilerOptions": {
+		"baseUrl": ".",
 		"target": "esnext",
-		"module": "esnext",
+		"module": "commonjs",
 		"jsx": "preserve",
-		"moduleResolution": "node",
-		"noEmit": true,
 		"strict": true,
-		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
 		"forceConsistentCasingInFileNames": true,
-		"resolveJsonModule": true,
+		"esModuleInterop": true,
 		"allowJs": false,
-		"skipLibCheck": false,
-		"isolatedModules": true,
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"types": ["react"]
+		"noEmit": true,
+		"types": ["react"],
+		"paths": {
+			"@/*": ["./src/*"],
+			"@assets/*": ["./src/assets/*"],
+			"@components/*": ["./src/components/*"],
+			"@static/*": ["./src/static/*"],
+			"@pages/*": ["./src/pages/*"],
+			"@tags/*": ["./src/tags/*"]
+		}
 	},
 	"include": ["src"],
 	"exclude": ["node_modules"]
