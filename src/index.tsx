@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 import { IndexPage } from './pages/index';
 
-if (process.env.NODE_ENV === 'production') {
+if (window.PWA_EXPORT) {
 	const sheet = new ServerStyleSheet();
 
 	ReactDOM.hydrate(
@@ -16,11 +16,13 @@ if (process.env.NODE_ENV === 'production') {
 			sheet.seal();
 		}
 	);
-
-	// Service Worker registration
-	// if ('serviceWorker' in navigator) {
-	// 	navigator.serviceWorker.register('/sw.js');
-	// }
 } else {
-	ReactDOM.render(<IndexPage />, document.getElementById('app'));
+	// if (process.env.NODE_ENV === 'production') {
+	// 	// Service Worker registration
+	// 	if ('serviceWorker' in navigator) {
+	// 		navigator.serviceWorker.register('/sw.js');
+	// 	}
+	// }
+
+	ReactDOM.hydrate(<IndexPage />, document.getElementById('app'));
 }

@@ -43,7 +43,7 @@
     "@types/styled-components": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
-    "@pwa/cli": "latest",
+    "@pwa/cli": "^0.5.2",
     "@pwa/plugin-sw-workbox": "latest",
     "@pwa/plugin-typescript": "latest",
     "@pwa/preset-react": "latest",
