@@ -12,7 +12,12 @@ export const Header = ({ title, left, right }: HeaderProps) => (
 		<Flex flexDirection="column" justifyContent="center">
 			{left}
 		</Flex>
-		<Flex flexDirection="column" alignItems="center" justifyContent="center">
+		<Flex
+			flexDirection="column"
+			alignItems="center"
+			justifyContent="center"
+			py="m"
+		>
 			<Heading level={1}>{title}</Heading>
 		</Flex>
 		<Flex flexDirection="column" alignItems="flex-end" justifyContent="center">

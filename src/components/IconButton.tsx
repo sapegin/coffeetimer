@@ -7,6 +7,7 @@ export const IconButton = styled(Box)`
 	display: flex;
 	width: ${BUTTON_SIZE};
 	height: ${BUTTON_SIZE};
+	margin: -0.4rem;
 	align-items: center;
 	justify-content: center;
 	padding: 0;
