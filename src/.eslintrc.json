@@ -1,15 +1,7 @@
 {
-  "extends": [
-    "tamia/typescript-react",
-    "prettier",
-    "prettier/@typescript-eslint"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint/eslint-plugin"
-  ],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
-  "rules": {}
+	"root": true,
+	"extends": "tamia/typescript-react",
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	}
 }

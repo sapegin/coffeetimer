@@ -112,7 +112,16 @@ export default {
 	colors,
 	boxShadows,
 	breakpoints,
-	headingStyles: {},
+	headingStyles: {
+		1: {
+			color: 'base',
+			fontFamily: 'heading',
+			fontWeight: 'heading',
+			lineHeight: 'heading',
+			letterSpacing: 'heading',
+			fontSize: fontSizes.l,
+		},
+	},
 	textStyles: {
 		base: {
 			...textBaseStyles,

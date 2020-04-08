@@ -7,7 +7,6 @@ import { Provider } from './Provider';
 const GlobalStyles = createGlobalStyle`
 	body {
 		min-height: 0;
-		overflow: hidden;
 	}
 `;
 

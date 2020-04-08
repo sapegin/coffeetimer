@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Box, Flex } from 'tamia';
 import { CircularProgress } from './CircularProgress';
+import { IconButton } from './IconButton';
 import { Time } from './Time';
 import { Icon } from './Icon';
 
 const BUTTON_SIZE = '8rem';
-const BUTTON_HALF_SIZE = '3rem';
 
 type Status = 'paused' | 'running';
 
@@ -33,29 +33,6 @@ const StartButton = styled(Box)`
 	&:hover,
 	&:active {
 		background-color: ${p => p.theme.colors.hover};
-		cursor: pointer;
-	}
-	&:focus {
-		outline: 0;
-		box-shadow: ${p => p.theme.boxShadows.focus};
-	}
-`;
-
-const ResetButton = styled(Box)`
-	width: ${BUTTON_HALF_SIZE};
-	height: ${BUTTON_HALF_SIZE};
-	padding: 0;
-	color: ${p => p.theme.colors.primary};
-	border: 0;
-	border-radius: 50%;
-	will-change: opacity;
-	transition: opacity 0.7s cubic-bezier(0.61, 1, 0.88, 1),
-		background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-
-	&:hover,
-	&:active {
-		background-color: ${p => p.theme.colors.hover};
-		color: ${p => p.theme.colors.bg};
 		cursor: pointer;
 	}
 	&:focus {
@@ -110,7 +87,7 @@ export const TheButton = ({
 			right="-4rem"
 			alignItems="center"
 		>
-			<ResetButton
+			<IconButton
 				as="button"
 				type="button"
 				onClick={onReset}
@@ -119,7 +96,7 @@ export const TheButton = ({
 				opacity={status === 'running' ? 1 : 0}
 			>
 				<Icon icon="reset" size={28} />
-			</ResetButton>
+			</IconButton>
 		</Flex>
 	</Box>
 );

@@ -37,6 +37,10 @@ const Input = styled.input`
 	width: 100%;
 	margin: 0;
 	-webkit-appearance: none;
+	transition: opacity 0.2s ease-in-out;
+	&[disabled] {
+		opacity: 0.5;
+	}
 	&:focus {
 		outline: 0;
 	}

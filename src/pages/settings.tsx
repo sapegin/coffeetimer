@@ -5,24 +5,24 @@ import { App } from '../components/App';
 import { Header } from '../components/Header';
 import { IconButton } from '../components/IconButton';
 import { Icon } from '../components/Icon';
-import { MainScreen } from '../screens/MainScreen';
+import { SettingsScreen } from '../screens/SettingsScreen';
 
 export const IndexPage = () => {
 	return (
 		<App>
 			<Box mb="m">
 				<Header
-					title="Coffee timer"
+					title="About coffee timer"
 					right={
-						<Link href="/settings" passHref>
-							<IconButton as="a" aria-label="About coffee timer">
-								<Icon icon="menu" size={28} />
+						<Link href="/" passHref>
+							<IconButton as="a" aria-label="Close">
+								<Icon icon="close" size={28} />
 							</IconButton>
 						</Link>
 					}
 				/>
 			</Box>
-			<MainScreen />
+			<SettingsScreen />
 		</App>
 	);
 };
