@@ -3,7 +3,7 @@ import { Flex, Text, Link } from 'tamia';
 
 export const SettingsScreen = () => {
 	return (
-		<Flex flexDirection="column" gap="m">
+		<Flex as="main" flexDirection="column" gap="m">
 			<Text>
 				<span aria-hidden="true">🦠</span> Made at home in Berlin during the
 				Coronavirus lockdown by{' '}

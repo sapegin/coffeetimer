@@ -52,9 +52,9 @@ const colors = {
 	base: '#333',
 	light: '#767676',
 	border: '#ccc',
-	primary: '#b279c5',
+	primary: '#9564a2',
 	focus: 'hsla(285, 40%, 62%, 0.5)',
-	hover: '#994db3',
+	hover: '#9b56ae',
 	selection: 'rgb(255,237,117)',
 	selectionAlpha: 'rgba(255,237,117,0.25)',
 };

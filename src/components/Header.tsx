@@ -8,7 +8,7 @@ interface HeaderProps {
 }
 
 export const Header = ({ title, left, right }: HeaderProps) => (
-	<Stack gridTemplateColumns="3rem 1fr 3rem">
+	<Stack as="header" gridTemplateColumns="3rem 1fr 3rem">
 		<Flex flexDirection="column" justifyContent="center">
 			{left}
 		</Flex>

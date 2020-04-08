@@ -28,7 +28,7 @@ export const MainScreen = () => {
 	}, [timer]);
 
 	return (
-		<Flex flexDirection="column" gap="l">
+		<Flex as="main" flexDirection="column" gap="l">
 			<Box>
 				<WaterSlider
 					min={waterFrom}
