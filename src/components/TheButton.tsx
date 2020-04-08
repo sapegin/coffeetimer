@@ -26,14 +26,9 @@ const StartButton = styled(Box)`
 	border: 0;
 	border-radius: 50%;
 	color: ${p => p.theme.colors.bg};
-	opacity: 1;
 	will-change: opacity;
 	transition: opacity 0.7s cubic-bezier(0.61, 1, 0.88, 1),
 		background-color 0.2s ease-in-out;
-
-	&[disabled] {
-		opacity: 0;
-	}
 
 	&:hover,
 	&:active {
@@ -52,15 +47,10 @@ const ResetButton = styled(Box)`
 	padding: 0;
 	color: ${p => p.theme.colors.primary};
 	border: 0;
-	opacity: 1;
 	border-radius: 50%;
 	will-change: opacity;
 	transition: opacity 0.7s cubic-bezier(0.61, 1, 0.88, 1),
 		background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-
-	&[disabled] {
-		opacity: 0;
-	}
 
 	&:hover,
 	&:active {
@@ -107,6 +97,7 @@ export const TheButton = ({
 			onClick={onStart}
 			aria-label="Start timer"
 			disabled={status === 'running'}
+			opacity={status === 'running' ? 0 : 1}
 		>
 			<Box position="relative" left="0.2rem">
 				<Icon icon="play" size={64} />
@@ -125,6 +116,7 @@ export const TheButton = ({
 				onClick={onReset}
 				aria-label="Rest timer"
 				disabled={status !== 'running'}
+				opacity={status === 'running' ? 1 : 0}
 			>
 				<Icon icon="reset" size={28} />
 			</ResetButton>
