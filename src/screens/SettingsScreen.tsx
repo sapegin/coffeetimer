@@ -20,6 +20,12 @@ export const SettingsScreen = () => {
 				<Link href="https://ionicons.com/">Ionicons</Link>,{' '}
 				<Link href="https://thenounproject.com/coquet_adrien/">
 					Adrien Coquet
+				</Link>{' '}
+				and{' '}
+				<Link href="https://thenounproject.com/Millenials/">Millenials</Link>.
+				Sound by{' '}
+				<Link href="https://freesound.org/people/Robinhood76/">
+					Robinhood76
 				</Link>
 				.
 			</Text>
