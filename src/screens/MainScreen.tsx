@@ -6,10 +6,10 @@ import { WaterSlider } from '../components/WaterSlider';
 import { Ingredients } from '../components/Ingredients';
 import { Steps, Step } from '../components/Steps';
 import { timerMachine } from '../machines/timerMachine';
-import { preset } from '../presets/default';
+import { recipe } from '../recipes/chemex';
 
 export const MainScreen = () => {
-	const { waterFrom, waterTo, waterDefault, brew } = preset;
+	const { waterFrom, waterTo, waterDefault, brew } = recipe;
 	const [
 		{
 			context: { waterAmount, elapsed },

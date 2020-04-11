@@ -1,8 +1,8 @@
-import { BrewPreset } from '../types/BrewPreset';
+import { BrewRecipe } from '../types/BrewRecipe';
 
 const round = (value: number) => Math.round(value / 10) * 10;
 
-export const preset: BrewPreset = {
+export const recipe: BrewRecipe = {
 	waterFrom: 100,
 	waterTo: 600,
 	waterDefault: 500,

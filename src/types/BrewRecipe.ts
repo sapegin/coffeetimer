@@ -1,4 +1,4 @@
-export interface BrewPreset {
+export interface BrewRecipe {
 	waterFrom: number;
 	waterTo: number;
 	waterDefault: number;
