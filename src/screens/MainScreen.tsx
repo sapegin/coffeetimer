@@ -5,6 +5,7 @@ import { TheButton } from '../components/TheButton';
 import { WaterSlider } from '../components/WaterSlider';
 import { Ingredients } from '../components/Ingredients';
 import { Steps, Step } from '../components/Steps';
+import { useSetting } from '../util/useSetting';
 import { timerMachine } from '../machines/timerMachine';
 import { recipe } from '../recipes/chemex';
 
@@ -12,16 +13,19 @@ export const MainScreen = () => {
 	const { waterFrom, waterTo, waterDefault, brew } = recipe;
 	const [
 		{
-			context: { waterAmount, elapsed },
+			context: { elapsed },
 			value: status,
 		},
 		send,
 	] = useMachine(timerMachine);
+
+	const [waterAmount, setWaterAmount] = useSetting('waterAmount', waterDefault);
+
 	const { timer, coffeeAmount, steps } = brew({ waterAmout: waterAmount });
 
 	useEffect(() => {
-		send('UPDATE_WATER_AMOUNT', { value: waterDefault });
-	}, [waterDefault]);
+		send('UPDATE_WATER_AMOUNT', { value: waterAmount });
+	}, [waterAmount]);
 
 	useEffect(() => {
 		send('UPDATE_DURATION', { value: timer });
@@ -36,11 +40,7 @@ export const MainScreen = () => {
 					value={waterAmount}
 					step={10}
 					disabled={status === 'running'}
-					onChange={value => {
-						send('UPDATE_WATER_AMOUNT', {
-							value,
-						});
-					}}
+					onChange={setWaterAmount}
 				/>
 			</Box>
 			<Box>

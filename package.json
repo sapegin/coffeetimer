@@ -28,6 +28,7 @@
     "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-storage-hooks": "^4.0.0",
     "styled-components": "^5.0.1",
     "tamia": "^5.5.1",
     "xstate": "^4.8.0"
