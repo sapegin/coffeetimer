@@ -14,7 +14,7 @@ export const App: React.FC = ({ children }) => (
 	<Provider>
 		<GlobalStyles />
 		<Head>
-			<title>Coffee timer</title>
+			<title>Coffee Timer</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<meta charSet="utf-8" />
 			<link
@@ -25,9 +25,9 @@ export const App: React.FC = ({ children }) => (
 			<meta name="apple-mobile-web-app-capable" content="yes" />
 			<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 			<meta name="theme-color" content="#9564a2" />
-			<meta name="description" content="Basic coffee timer" />
+			<meta name="description" content="Basic timer for pour over coffee" />
 			<meta property="og:type" content="website" />
-			<meta property="og:title" content="Coffee timer" />
+			<meta property="og:title" content="Coffee Timer" />
 			<meta name="twitter:creator" content="@iamsapegin" />
 		</Head>
 		{children}
