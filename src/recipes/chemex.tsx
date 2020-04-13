@@ -20,8 +20,7 @@ export const recipe: BrewRecipe = {
 			coffeeAmount,
 			steps: [
 				[`Pour ${ml(bloom)} of water, start timer`, ml(bloom)],
-				[`Pour ${ml(step)} of water`, ml(bloom + step)],
-				`Stir the coffee with a spoon`,
+				[`Pour ${ml(step)} of water, stir coffee`, ml(bloom + step)],
 				[`Pour ${ml(step)} more`, ml(bloom + step * 2)],
 				[`Pour ${ml(step)} more`, ml(bloom + step * 3)],
 				[`Pour the rest of the water`, ml(waterAmout)],
