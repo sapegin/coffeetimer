@@ -4,5 +4,9 @@ export interface BrewRecipe {
 	waterDefault: number;
 	brew: (options: {
 		waterAmout: number;
-	}) => { timer: number; coffeeAmount: number; steps: string[] };
+	}) => {
+		timer: number;
+		coffeeAmount: number;
+		steps: (string | [string, string | number])[];
+	};
 }

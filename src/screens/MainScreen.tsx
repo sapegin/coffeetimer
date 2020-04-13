@@ -60,7 +60,16 @@ export const MainScreen = () => {
 			<Box>
 				<Flex as={Steps} flexDirection="column" gap="s">
 					{steps.map((step, index) => (
-						<Step key={index}>{step}</Step>
+						<Step key={index}>
+							{Array.isArray(step) ? (
+								<Flex justifyContent="space-between">
+									<Box>{step[0]}</Box>
+									<Box ml="s">{step[1]}</Box>
+								</Flex>
+							) : (
+								step
+							)}
+						</Step>
 					))}
 				</Flex>
 			</Box>

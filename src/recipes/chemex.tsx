@@ -1,6 +1,7 @@
 import { BrewRecipe } from '../types/BrewRecipe';
 
 const round = (value: number) => Math.round(value / 10) * 10;
+const ml = (value: number) => `${round(value)} ml`;
 
 export const recipe: BrewRecipe = {
 	waterFrom: 100,
@@ -16,13 +17,14 @@ export const recipe: BrewRecipe = {
 			timer,
 			coffeeAmount,
 			steps: [
-				`Pour ${round(bloom)} ml of water and wait ${timer} seconds`,
-				`Pour ${round(step)} ml of water and stir the coffee with a spoon`,
-				`Pour ${round(step)} ml more`,
-				`Pour ${round(step)} ml more`,
-				`Pour the rest of the water`,
+				[`Pour ${ml(bloom)} of water and start the timer`, ml(bloom)],
+				[`Pour ${ml(step)} of water`, ml(bloom + step)],
+				`Stir the coffee with a spoon`,
+				[`Pour ${ml(step)} more`, ml(bloom + step * 2)],
+				[`Pour ${ml(step)} more`, ml(bloom + step * 3)],
+				[`Pour the rest of the water`, ml(waterAmout)],
 				`Shake the jug`,
-				`Enjoy your coffee! ☕️`,
+				[`Enjoy your coffee!`, `☕️`],
 			],
 		};
 	},
