@@ -1,7 +1,9 @@
 import { BrewRecipe } from '../types/BrewRecipe';
 
 const round = (value: number) => Math.round(value / 10) * 10;
-const ml = (value: number) => `${round(value)} ml`;
+
+// eslint-disable-next-line no-irregular-whitespace
+const ml = (value: number) => `${round(value)} ml`; // Non-breaking space
 
 export const recipe: BrewRecipe = {
 	waterFrom: 100,
@@ -17,7 +19,7 @@ export const recipe: BrewRecipe = {
 			timer,
 			coffeeAmount,
 			steps: [
-				[`Pour ${ml(bloom)} of water and start the timer`, ml(bloom)],
+				[`Pour ${ml(bloom)} of water, start timer`, ml(bloom)],
 				[`Pour ${ml(step)} of water`, ml(bloom + step)],
 				`Stir the coffee with a spoon`,
 				[`Pour ${ml(step)} more`, ml(bloom + step * 2)],
