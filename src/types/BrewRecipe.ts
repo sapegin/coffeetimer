@@ -7,6 +7,6 @@ export interface BrewRecipe {
 	}) => {
 		timer: number;
 		coffeeAmount: number;
-		steps: (string | [string, string | number])[];
+		steps: (string | [string, string])[];
 	};
 }
