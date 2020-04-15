@@ -18,10 +18,7 @@ export const Modal = ({
 			{transitions.map(
 				({ item, key, props: styles }) =>
 					item && (
-						<AnimatedDialogOverlay
-							key={key}
-							style={{ opacity: styles.opacity }}
-						>
+						<AnimatedDialogOverlay key={key} style={styles}>
 							<DialogContent>{children}</DialogContent>
 						</AnimatedDialogOverlay>
 					)
