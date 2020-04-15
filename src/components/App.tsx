@@ -27,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
 	}
 
 	[data-reach-dialog-content] {
-		max-width: calc(${p => p.theme.page.contentMaxWidth} + ${p => p.theme.space.l});
+		max-width: ${p => p.theme.page.contentMaxWidth};
 		width: 100vw;
 		margin: 10vh auto;
 		background: white;

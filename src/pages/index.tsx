@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Dialog, DialogOverlay, DialogContent } from '@reach/dialog';
 import { Box, Container } from 'tamia';
 import { App } from '../components/App';
 import { Header } from '../components/Header';
 import { IconButton } from '../components/IconButton';
 import { Icon } from '../components/Icon';
+import { Modal } from '../components/Modal';
 import { MainScreen } from '../screens/MainScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
 
@@ -28,9 +28,10 @@ export const IndexPage = () => {
 					/>
 				</Box>
 				<MainScreen />
-				<Dialog
+				<Modal
 					isOpen={isSettingsOpen}
 					onDismiss={() => setSettingsOpen(false)}
+					aria-label="About coffee timer"
 				>
 					<Box mb="m">
 						<Header
@@ -46,7 +47,7 @@ export const IndexPage = () => {
 						/>
 					</Box>
 					<SettingsScreen />
-				</Dialog>
+				</Modal>
 			</Container>
 		</App>
 	);
