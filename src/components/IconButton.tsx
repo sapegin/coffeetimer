@@ -3,7 +3,7 @@ import { Box } from 'tamia';
 
 const BUTTON_SIZE = '2.5rem';
 
-export const IconButton = styled(Box)`
+export const IconButton = styled(Box).attrs({ as: 'button' })`
 	display: flex;
 	width: ${BUTTON_SIZE};
 	height: ${BUTTON_SIZE};

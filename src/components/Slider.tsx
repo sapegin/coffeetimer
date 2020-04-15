@@ -18,7 +18,7 @@ const thumbStyles = css`
 	width: ${THUMB_SIZE};
 	height: ${THUMB_SIZE};
 	cursor: pointer;
-	border-radius: 50%;
+	border-radius: 99rem;
 	border: 0.2rem solid ${p => p.theme.colors.primary};
 	background-color: ${p => p.theme.colors.bg};
 	@media (pointer: coarse) {

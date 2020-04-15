@@ -91,17 +91,17 @@ export default {
 	listMargin: '1.3em',
 	page: {
 		// Max page with
-		maxWidth: '32rem',
+		maxWidth: null,
 
 		// Body paddings
 		xPadding: space.m,
 		yPadding: 0,
 
 		// Max content width (<Container>)
-		contentMaxWidth: null,
+		contentMaxWidth: '32rem',
 
 		// Max text column width (<TextContainer>)
-		textMaxWidth: '40rem',
+		textMaxWidth: '32rem',
 	},
 	fonts,
 	space,

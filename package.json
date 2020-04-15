@@ -22,6 +22,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@reach/dialog": "^0.10.0",
     "@types/styled-components": "^5.0.1",
     "@xstate/react": "^0.8.1",
     "howler": "^2.1.3",
