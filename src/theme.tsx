@@ -52,9 +52,9 @@ const colors = {
 	base: '#333',
 	light: '#767676',
 	border: '#ccc',
-	primary: '#b279c5',
+	primary: '#9564a2',
 	focus: 'hsla(285, 40%, 62%, 0.5)',
-	hover: '#994db3',
+	hover: '#9b56ae',
 	selection: 'rgb(255,237,117)',
 	selectionAlpha: 'rgba(255,237,117,0.25)',
 };
@@ -90,18 +90,18 @@ export default {
 	headingMarginTop: space.l,
 	listMargin: '1.3em',
 	page: {
-		// Max page with
-		maxWidth: '32rem',
+		// Body
+		bodyMaxWidth: null,
+		bodyPaddingX: 0,
+		bodyPaddingY: 0,
 
-		// Body paddings
-		xPadding: space.m,
-		yPadding: 0,
-
-		// Max content width (<Container>)
-		contentMaxWidth: null,
+		// Content (<Container>)
+		contentMaxWidth: '32rem',
+		contentPaddingX: space.m,
+		contentPaddingY: 0,
 
 		// Max text column width (<TextContainer>)
-		textMaxWidth: '40rem',
+		textMaxWidth: '32rem',
 	},
 	fonts,
 	space,
@@ -112,7 +112,16 @@ export default {
 	colors,
 	boxShadows,
 	breakpoints,
-	headingStyles: {},
+	headingStyles: {
+		1: {
+			color: 'base',
+			fontFamily: 'heading',
+			fontWeight: 'heading',
+			lineHeight: 'heading',
+			letterSpacing: 'heading',
+			fontSize: fontSizes.l,
+		},
+	},
 	textStyles: {
 		base: {
 			...textBaseStyles,

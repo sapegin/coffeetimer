@@ -8,12 +8,13 @@ export const Steps = styled.ol`
 
 export const Step = styled.li`
 	counter-increment: steps-counter;
-	padding: 0;
+	position: relative;
+	padding: 0 0 0 1rem;
 
 	&::before {
 		content: counter(steps-counter);
-		display: inline-block;
-		min-width: 1rem;
+		position: absolute;
+		left: 0;
 		color: ${p => p.theme.colors.primary};
 		font-weight: ${p => p.theme.fontWeights.bold};
 	}

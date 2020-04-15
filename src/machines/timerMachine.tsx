@@ -1,4 +1,5 @@
 import { createMachine, assign } from 'xstate';
+import { done } from '../util/done';
 
 const INTERVAL = 1;
 const MS_IN_SECS = 1000;
@@ -48,6 +49,7 @@ export const timerMachine = createMachine<TimerContext, TimerEvent>({
 				'': {
 					target: 'paused',
 					cond: context => context.elapsed >= context.duration,
+					actions: done,
 				},
 				TOGGLE: {
 					target: 'paused',

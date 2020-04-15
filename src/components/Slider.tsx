@@ -12,14 +12,19 @@ interface SliderProps {
 
 const TRACK_SIZE = '0.4rem';
 const THUMB_SIZE = '1.2rem';
+const THUMB_TOUCH_SIZE = '2rem';
 
 const thumbStyles = css`
 	width: ${THUMB_SIZE};
 	height: ${THUMB_SIZE};
 	cursor: pointer;
-	border-radius: 50%;
+	border-radius: 99rem;
 	border: 0.2rem solid ${p => p.theme.colors.primary};
 	background-color: ${p => p.theme.colors.bg};
+	@media (pointer: coarse) {
+		width: ${THUMB_TOUCH_SIZE};
+		height: ${THUMB_TOUCH_SIZE};
+	}
 `;
 
 const thumbFocusStyles = css`
@@ -37,12 +42,19 @@ const Input = styled.input`
 	width: 100%;
 	margin: 0;
 	-webkit-appearance: none;
+	transition: opacity 0.2s ease-in-out;
+	&[disabled] {
+		opacity: 0.5;
+	}
 	&:focus {
 		outline: 0;
 	}
 	&::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		margin-top: -${TRACK_SIZE};
+		margin-top: -0.4rem;
+		@media (pointer: coarse) {
+			margin-top: -0.8rem;
+		}
 		${thumbStyles};
 	}
 	&:focus::-webkit-slider-thumb {
