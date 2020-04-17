@@ -7,5 +7,6 @@ Thumbs.db
 *.sublime-workspace
 *.log
 .eslintcache
-/build
 .env*
+.cache/
+public/

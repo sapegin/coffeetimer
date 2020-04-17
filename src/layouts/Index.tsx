@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { Box, Container } from 'tamia';
-import { App } from '../components/App';
 import { Header } from '../components/Header';
 import { IconButton } from '../components/IconButton';
 import { Icon } from '../components/Icon';
 import { Modal } from '../components/Modal';
 import { MainScreen } from '../screens/MainScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
+import Base from './Base';
 
-export const IndexPage = () => {
+export default function IndexPage() {
 	const [isSettingsOpen, setSettingsOpen] = useState(false);
 
 	return (
-		<App>
-			<Container>
+		<Base>
+			<Container style={{ outline: 'red' }}>
 				<Box mb="m">
 					<Header
 						title="Coffee timer"
@@ -49,6 +49,6 @@ export const IndexPage = () => {
 					<SettingsScreen />
 				</Modal>
 			</Container>
-		</App>
+		</Base>
 	);
-};
+}

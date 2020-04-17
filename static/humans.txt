@@ -1,0 +1,19 @@
+/* TEAM */
+
+  Web developer: Artem Sapegin
+  Email: artem@sapegin.ru
+  Site: https://sapegin.me
+  Location: Berlin, Germany
+
+
+/* POWERED BY */
+
+  Gatsby: https://www.gatsbyjs.org/
+	styled-components: https://www.styled-components.com/
+	styled-system: https://styled-system.com/
+  Tâmia: https://sapegin.github.io/tamia/
+
+  -_-_-_-_-_-_-_,------,
+  _-_-_-_-_-_-_-|   /\_/\\
+  -_-_-_-_-_-_-~|__( ^ .^)
+  -_-_-_-_-_-_-""  ""

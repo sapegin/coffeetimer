@@ -12,7 +12,7 @@ export const SettingsScreen = () => {
 			<Text>
 				<Link href="https://github.com/sapegin/coffeetimer">Source code</Link>.
 				Powered by <Link href="https://reactjs.org/">React</Link>,{' '}
-				<Link href="https://pwa.cafe/">Universal PWA Builder</Link>,{' '}
+				<Link href="https://www.gatsbyjs.org/">Gatsby</Link>,{' '}
 				<Link href="https://styled-components.com/">styled-components</Link>,{' '}
 				<Link href="https://styled-system.com/">Styled System</Link>,{' '}
 				<Link href="https://xstate.js.org/">XState</Link>,{' '}

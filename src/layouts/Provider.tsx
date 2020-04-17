@@ -1,10 +1,15 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { Provider } from './Provider';
+import { TamiaRoot } from 'tamia';
+import theme from '../theme';
 
-// Avoid scroll on mobile
+type Props = {
+	children: React.ReactNode;
+};
+
 const GlobalStyles = createGlobalStyle`
 	body {
+		/* Avoid scroll on mobile */
 		min-height: 0;
 	}
 
@@ -41,9 +46,11 @@ const GlobalStyles = createGlobalStyle`
 	}
 `;
 
-export const App: React.FC = ({ children }) => (
-	<Provider>
-		<GlobalStyles />
-		{children}
-	</Provider>
-);
+export default function Root({ children }: Props) {
+	return (
+		<TamiaRoot theme={theme}>
+			<GlobalStyles />
+			{children}
+		</TamiaRoot>
+	);
+}
