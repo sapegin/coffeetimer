@@ -12,6 +12,9 @@ declare global {
 const container = document.getElementById('app');
 
 if (window.PWA_EXPORT) {
+	// Capture critical CSS from styled-components and inline it into the head
+	// of the document during PWA build phase
+
 	const sheet = new ServerStyleSheet();
 
 	ReactDOM.hydrate(
@@ -25,10 +28,13 @@ if (window.PWA_EXPORT) {
 		}
 	);
 } else if (process.env.NODE_ENV === 'production') {
-	// Service Worker registration
-	// if ('serviceWorker' in navigator) {
-	// 	navigator.serviceWorker.register('/sw.js');
-	// }
+	// Register Service Worker
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', () => {
+			navigator.serviceWorker.register('/sw.js');
+		});
+	}
+
 	ReactDOM.hydrate(<IndexPage />, container);
 } else {
 	ReactDOM.render(<IndexPage />, container);

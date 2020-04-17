@@ -10,15 +10,7 @@
 		"esModuleInterop": true,
 		"allowJs": false,
 		"noEmit": true,
-		"types": ["react"],
-		"paths": {
-			"@/*": ["./src/*"],
-			"@assets/*": ["./src/assets/*"],
-			"@components/*": ["./src/components/*"],
-			"@static/*": ["./src/static/*"],
-			"@pages/*": ["./src/pages/*"],
-			"@tags/*": ["./src/tags/*"]
-		}
+		"types": ["react", "node"]
 	},
 	"include": ["src"]
 }
