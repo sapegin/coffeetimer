@@ -7,6 +7,6 @@ exports.babel = function(config) {
 	// Configure server-side rendering for styled-components
 	config.plugins.push([
 		'styled-components',
-		{ ssr: true, displayName: true, pure: true, preprocess: false },
+		{ ssr: true, displayName: true, preprocess: false },
 	]);
 };
