@@ -9,7 +9,7 @@ echo
 echo "Installing dependencies..."
 npm install
 
-export LIGHTHOUSE_CHROMIUM_PATH="$(pwd)/chrome-linux"
+export LIGHTHOUSE_CHROMIUM_PATH="$(pwd)/chrome-linux/chrome"
 
 echo
 echo "Downloading Chrome..."
