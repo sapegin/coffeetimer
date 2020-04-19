@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components';
 interface SliderProps {
 	min: number;
 	max: number;
-	step: number;
+	step?: number;
 	value: number;
-	disabled: boolean;
+	disabled?: boolean;
 	onChange: (value: number) => void;
 }
 

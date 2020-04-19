@@ -5,6 +5,7 @@ import { Text } from 'tamia';
 interface IngredientsProps {
 	waterAmount: number;
 	coffeeAmount: number;
+	ratio: number;
 }
 
 const Delimiter = styled.span`
@@ -17,8 +18,9 @@ const Delimiter = styled.span`
 export const Ingredients = ({
 	waterAmount,
 	coffeeAmount,
+	ratio,
 }: IngredientsProps) => (
 	<Text variant="light" textAlign="center">
-		{waterAmount} ml <Delimiter /> {coffeeAmount} g
+		{waterAmount} ml <Delimiter /> 1:{ratio} <Delimiter /> {coffeeAmount} g
 	</Text>
 );

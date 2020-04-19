@@ -1,36 +1,38 @@
-import React, { useEffect } from 'react';
-import { useMachine } from '@xstate/react';
+import React from 'react';
+import { StateValue } from 'xstate';
 import { Box, Flex } from 'tamia';
 import { TheButton } from '../components/TheButton';
 import { WaterSlider } from '../components/WaterSlider';
 import { Ingredients } from '../components/Ingredients';
 import { Steps, Step } from '../components/Steps';
-import { useSetting } from '../util/useSetting';
-import { timerMachine } from '../machines/timerMachine';
-import { recipe } from '../recipes/chemex';
 
-export const MainScreen = () => {
-	const { waterFrom, waterTo, waterDefault, brew } = recipe;
-	const [
-		{
-			context: { elapsed },
-			value: status,
-		},
-		send,
-	] = useMachine(timerMachine);
+interface Props {
+	status: StateValue;
+	waterFrom: number;
+	waterTo: number;
+	waterAmount: number;
+	coffeeAmount: number;
+	ratio: number;
+	timer: number;
+	elapsed: number;
+	steps: (string | [string, string])[];
+	onWaterAmountChange: (value: number) => void;
+	onToggle: () => void;
+}
 
-	const [waterAmount, setWaterAmount] = useSetting('waterAmount', waterDefault);
-
-	const { timer, coffeeAmount, steps } = brew({ waterAmout: waterAmount });
-
-	useEffect(() => {
-		send('UPDATE_WATER_AMOUNT', { value: waterAmount });
-	}, [waterAmount]);
-
-	useEffect(() => {
-		send('UPDATE_DURATION', { value: timer });
-	}, [timer]);
-
+export const MainScreen = ({
+	status,
+	waterFrom,
+	waterTo,
+	waterAmount,
+	coffeeAmount,
+	ratio,
+	timer,
+	elapsed,
+	steps,
+	onWaterAmountChange,
+	onToggle,
+}: Props) => {
 	return (
 		<Flex as="main" flexDirection="column" gap="l">
 			<Box>
@@ -38,9 +40,9 @@ export const MainScreen = () => {
 					min={waterFrom}
 					max={waterTo}
 					value={waterAmount}
-					step={10}
+					step={50}
 					disabled={status === 'running'}
-					onChange={setWaterAmount}
+					onChange={onWaterAmountChange}
 				/>
 			</Box>
 			<Box>
@@ -49,13 +51,17 @@ export const MainScreen = () => {
 						status={status === 'running' ? 'running' : 'paused'}
 						duration={timer}
 						elapsed={elapsed}
-						onStart={() => send('TOGGLE')}
-						onReset={() => send('TOGGLE')}
+						onStart={onToggle}
+						onReset={onToggle}
 					/>
 				</Flex>
 			</Box>
 			<Box>
-				<Ingredients waterAmount={waterAmount} coffeeAmount={coffeeAmount} />
+				<Ingredients
+					waterAmount={waterAmount}
+					coffeeAmount={coffeeAmount}
+					ratio={ratio}
+				/>
 			</Box>
 			<Box>
 				<Flex as={Steps} flexDirection="column" gap="s">

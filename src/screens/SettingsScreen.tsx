@@ -1,9 +1,22 @@
 import React from 'react';
-import { Flex, Text, Link } from 'tamia';
+import { Box, Flex, Text, Link } from 'tamia';
+import { Slider } from '../components/Slider';
 
-export const SettingsScreen = () => {
+interface Props {
+	ratio: number;
+	onRatioChange: (value: number) => void;
+}
+
+export const SettingsScreen = ({ ratio, onRatioChange }: Props) => {
 	return (
 		<Flex as="main" flexDirection="column" gap="m">
+			<Box as="label">
+				<Flex alignItems="center" justifyContent="space-between">
+					<Text>Coffee to water ratio</Text>
+					<Text>1:{ratio}</Text>
+				</Flex>
+				<Slider min={10} max={22} value={ratio} onChange={onRatioChange} />
+			</Box>
 			<Text>
 				<span aria-hidden="true">🦠</span> Made at home in Berlin during the
 				Coronavirus lockdown by{' '}

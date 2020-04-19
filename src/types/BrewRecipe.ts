@@ -2,8 +2,10 @@ export interface BrewRecipe {
 	waterFrom: number;
 	waterTo: number;
 	waterDefault: number;
+	ratioDefault: number;
 	brew: (options: {
-		waterAmout: number;
+		waterAmount: number;
+		ratio: number;
 	}) => {
 		timer: number;
 		coffeeAmount: number;

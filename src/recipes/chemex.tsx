@@ -11,13 +11,13 @@ export const recipe: BrewRecipe = {
 	waterFrom: 100,
 	waterTo: 600,
 	waterDefault: 500,
-	brew: ({ waterAmout }) => {
+	ratioDefault: 15,
+	brew: ({ waterAmount, ratio }) => {
 		const timer = 45;
-		const ratio = 18;
-		const coffeeAmount = Math.round(waterAmout / ratio);
+		const coffeeAmount = Math.round(waterAmount / ratio);
 		const bloom = round(coffeeAmount * 2);
-		const steps = waterAmout > 350 ? 4 : 3;
-		const step = (waterAmout - bloom) / steps;
+		const steps = waterAmount > 350 ? 4 : 3;
+		const step = (waterAmount - bloom) / steps;
 		return {
 			timer,
 			coffeeAmount,
@@ -30,7 +30,7 @@ export const recipe: BrewRecipe = {
 						`Pour ${ml(step)} more`,
 						ml(bloom + step * (index + 2)),
 					]) as [string, string][]),
-				[`Pour the rest of the water`, ml(waterAmout)],
+				[`Pour the rest of the water`, ml(waterAmount)],
 				`Shake the jug`,
 				[`Enjoy your coffee!`, `☕️`],
 			],
