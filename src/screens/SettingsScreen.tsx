@@ -10,7 +10,7 @@ interface Props {
 export const SettingsScreen = ({ ratio, onRatioChange }: Props) => {
 	return (
 		<Flex as="main" flexDirection="column" gap="m">
-			<Box mb="m">
+			<Box pb="m">
 				<Flex alignItems="center" justifyContent="space-between" mb="s">
 					<Text>Coffee to water ratio</Text>
 					<Text>1:{ratio}</Text>

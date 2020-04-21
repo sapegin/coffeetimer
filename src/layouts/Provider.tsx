@@ -13,36 +13,50 @@ const GlobalStyles = createGlobalStyle`
 		min-height: 0;
 	}
 
-	/* @reach/dialog */
+	/* react-responsive-modal */
 
-	/* Used to detect in JavaScript if apps have loaded styles or not. */
-	:root {
-		--reach-dialog: 1;
-	}
-
-	[data-reach-dialog-overlay] {
+	.react-responsive-modal-overlay {
 		background: hsla(0, 0%, 0%, 0.33);
+		display: flex;
+		align-items: flex-start;
 		position: fixed;
 		top: 0;
+		left: 0;
 		right: 0;
 		bottom: 0;
-		left: 0;
-		overflow: auto;
+		padding: 0;
+		overflow-y: auto;
+		overflow-x: hidden;
+		z-index: 1000;
 	}
 
-	[data-reach-dialog-content] {
+
+	.react-responsive-modal-modal {
 		max-width: ${p => p.theme.page.contentMaxWidth};
-		width: 100vw;
-		margin: 10vh auto;
-		background: white;
+		position: relative;
+		margin: 0 auto;
 		padding: ${p => p.theme.space.m};
 		padding-top: 0;
-		outline: none;
+		background: ${p => p.theme.colors.bg};
 
 		@media (max-width: ${p => p.theme.breakpoints[0]}) {
 			height: 100vh;
 			margin: 0;
 		}
+	}
+
+	.react-responsive-modal-modalCenter {
+		margin: auto;
+	}
+
+	@keyframes react-responsive-modal-fadeIn {
+		0% { opacity: 0; }
+		100% { opacity: 1; }
+	}
+
+	@keyframes react-responsive-modal-fadeOut {
+		0% { opacity: 1; }
+		100% { opacity: 0; }
 	}
 `;
 

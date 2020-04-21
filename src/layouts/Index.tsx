@@ -66,8 +66,8 @@ export default function IndexPage() {
 					onToggle={() => send('TOGGLE')}
 				/>
 				<Modal
-					isOpen={isSettingsOpen}
-					onDismiss={() => setSettingsOpen(false)}
+					open={isSettingsOpen}
+					onClose={() => setSettingsOpen(false)}
 					aria-label="About coffee timer"
 				>
 					<Box mb="m">
