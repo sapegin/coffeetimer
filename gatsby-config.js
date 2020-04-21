@@ -25,6 +25,6 @@ module.exports = {
 				include_favicon: false,
 			},
 		},
-		'gatsby-plugin-offline',
-	],
+		process.env.NODE_ENV === 'production' ? 'gatsby-plugin-offline' : undefined,
+	].filter(Boolean),
 };
