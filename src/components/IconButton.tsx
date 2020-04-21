@@ -12,6 +12,7 @@ export const IconButton = styled(Box).attrs({ as: 'button' })`
 	justify-content: center;
 	padding: 0;
 	color: ${p => p.theme.colors.primary};
+	background-color: ${p => p.theme.colors.bg};
 	border: 0;
 	border-radius: 50%;
 	will-change: opacity;
