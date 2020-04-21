@@ -21,6 +21,6 @@ export const Ingredients = ({
 	ratio,
 }: IngredientsProps) => (
 	<Text variant="light" textAlign="center">
-		{waterAmount} ml <Delimiter /> 1:{ratio} <Delimiter /> {coffeeAmount} g
+		{coffeeAmount} g <Delimiter /> 1:{ratio} <Delimiter /> {waterAmount} ml
 	</Text>
 );
