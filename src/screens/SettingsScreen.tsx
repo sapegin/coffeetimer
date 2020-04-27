@@ -18,9 +18,14 @@ export const SettingsScreen = ({ ratio, onRatioChange }: Props) => {
 				<Slider min={10} max={22} value={ratio} onChange={onRatioChange} />
 			</Box>
 			<Text>
-				<span aria-hidden="true">🦠</span> Made at home in Berlin during the
-				Coronavirus lockdown by{' '}
-				<Link href="https://sapegin.me/">Artem&nbsp;Sapegin</Link>.
+				Made at home in Berlin during the Coronavirus lockdown by{' '}
+				<Link href="https://sapegin.me/">Artem&nbsp;Sapegin</Link>{' '}
+				<span aria-hidden="true">🦠</span>
+			</Text>
+			<Text>
+				The Chemex recipe is based on{' '}
+				<Link href="https://youtu.be/ikt-X5x7yoc">James Hoffmann’s recipe</Link>
+				.
 			</Text>
 			<Text>
 				<Link href="https://github.com/sapegin/coffeetimer">Source code</Link>.

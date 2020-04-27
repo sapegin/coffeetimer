@@ -1,5 +1,7 @@
 import { BrewRecipe } from '../types/BrewRecipe';
 
+// Based on https://www.youtube.com/watch?v=ikt-X5x7yoc and https://www.youtube.com/watch?v=AI4ynXzkSQo
+
 // Non-breaking space
 const nbsp = ' ';
 
@@ -16,7 +18,7 @@ export const recipe: BrewRecipe = {
 		const timer = 45;
 		const coffeeAmount = Math.round(waterAmount / ratio);
 		const bloom = round(coffeeAmount * 2);
-		const steps = waterAmount > 350 ? 4 : 3;
+		const steps = waterAmount > 350 ? 3 : 2;
 		const step = (waterAmount - bloom) / steps;
 		return {
 			timer,
